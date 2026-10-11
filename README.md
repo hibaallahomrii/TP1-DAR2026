@@ -34,19 +34,32 @@ Résultat : Java 8 et le compilateur Java sont reconnus par le système.
 
 ## 5. Étape 3 : Création de l'application serveur
 
-Cette partie sera complétée après la création du package `serverPackage` et de la classe `Server`.
+Dans cette étape, nous avons créé la classe `Server` dans le package `serverPackage` en utilisant un `ServerSocket` à l'écoute sur le port `1234`.
+
+* **Résultat et Interprétation :**
+  Après l'exécution du programme serveur, la console affiche le message d'attente. Cela indique que le serveur est démarré avec succès et qu'il est en état d'écoute active, en attente de la connexion d'un client.
 
 ### Capture d'écran
 
-À ajouter après la création et l'exécution du serveur.
+![Exécution du serveur](captures/03-server-waiting.png)
 
 ## 6. Étape 4 : Création de l'application cliente
 
-Cette partie sera complétée après la création du package `clientPackage` et de la classe `Client`.
+Dans cette étape, nous avons développé la classe `Client` au sein du package `clientPackage` afin d'établir une communication TCP avec l'application serveur.
 
-### Capture d'écran
+### Résultats et Captures d'écran
 
-À ajouter après la création et l'exécution du client.
+#### Test 1 : Connexion via `localhost`
+* **Description :** Établissement de la connexion TCP entre l'application cliente et l'application serveur en utilisant le nom d'hôte textuel `localhost`.
+* **Interprétation :** Le système d'exploitation traduit ce nom symbolique via le fichier de configuration local (`hosts`) pour pointer vers la machine locale, permettant ainsi au client de joindre le serveur sur le port `1234`.
+* **Capture d'écran :**
+  ![Client Localhost](captures/04-client-localhost.png)
+
+#### Test 2 : Connexion via l'adresse IP `127.0.0.1`
+* **Description :** Établissement de la même connexion TCP, mais en utilisant directement l'adresse IP numérique de boucle locale (`Loopback IP`) `127.0.0.1`.
+* **Interprétation :** Le client communique directement avec l'interface réseau interne de la machine sans passer par une étape de résolution de nom, ce qui aboutit au même succès de connexion.
+* **Capture d'écran :**
+  ![Client IP](captures/05-client-ip.png)
 
 ## 7. Étape 5 : Dépôt des livrables 
 
