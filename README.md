@@ -118,3 +118,58 @@ Le client se connecte au serveur, demande à l'utilisateur de saisir des entiers
 
 ## 6. Conclusion générale du TP1
 Ce TP a permis d'assimiler le fonctionnement des sockets TCP en Java, d'exploiter les flux de données binaires pour échanger des types primitifs, et de concevoir une application interactive dotée d'une gestion propre des connexions.
+
+# 📌 Partie 3 : Activité 1-3 — Service de Calculatrice Amélioré
+
+## 1. Objectif de l'activité
+
+L'objectif de cette activité est d'améliorer le service de calculatrice en proposant quatre opérations arithmétiques : Addition, Soustraction, Multiplication et Division. L'utilisation des classes `InetAddress` et `InetSocketAddress` permet de configurer l'adresse IP et le port de communication pour une connexion locale ou entre deux machines distinctes.
+
+## 2. Étape 1 : Préparation de l'espace de travail
+
+- Réutilisation et mise à jour du projet Client/Serveur développé dans l'Activité 1-2.
+- Création des classes `Server1_3.java` et `Client1_3.java` dans les packages `serverPackage` et `clientPackage`.
+- Utilisation de `InetSocketAddress` pour configurer l'adresse réseau et le port de communication `1234`.
+
+## 3. Étape 2 : Description des applications
+
+### A. Description du code du Serveur
+
+Le serveur écoute sur le port `1234` à l'aide de `ServerSocket` et `InetSocketAddress`. Il reçoit le choix de l'opération et deux nombres de type `double`, effectue le calcul demandé à l'aide d'une structure `switch` et renvoie le résultat ou un message d'erreur au client.
+
+### B. Description du code du Client
+
+Le client se connecte au serveur local ou distant, affiche un menu interactif permettant de choisir une opération et de saisir deux nombres, transmet les données via `PrintWriter`, puis reçoit et affiche la réponse à l'aide de `BufferedReader`.
+
+## 4. Résultats et Tests
+
+### A. Lancement et attente du Serveur
+
+- **Résultat :** Le serveur démarre correctement et se met en écoute sur l'adresse IP configurée et le port `1234`.
+- **Capture d'écran :**
+
+![Démarrage du serveur Server1_3](captures/10-serveur_en_ecoute_port_1234.png)
+
+### B. Exécution du Menu Interactif et Connexion du Client
+
+- **Résultat :** Le client se connecte au serveur, affiche le menu des quatre opérations, récupère les valeurs saisies et les transmet au serveur.
+- **Capture d'écran :**
+
+![Menu interactif du client](captures/11-client_menu_interactif_calculatrice.png)
+
+### C. Réception du Résultat et Gestion des Erreurs
+
+- **Résultat :** Le serveur effectue l'opération choisie et renvoie le résultat au client. Les erreurs, notamment la division par zéro et les choix de menu invalides, sont prises en compte.
+- **Capture d'écran :**
+
+![Résultat de la calculatrice](captures/12-client_resultat_operation_et_erreurs.png)
+
+## 5. Étape 3 : Dépôt des livrables (Activité 1-3)
+
+- Le code source complet a été versionné avec Git et poussé sur le dépôt distant GitHub `TP1-DAR2026`.
+- Le lien du dépôt a été déposé dans l'espace dédié de la plateforme ENT.
+
+## 6. Conclusion générale du TP1
+
+Cette activité a permis d'approfondir la communication Client/Serveur en Java avec TCP, de configurer les adresses réseau, d'utiliser les flux texte pour échanger des données et de réaliser quatre opérations arithmétiques tout en gérant les erreurs.
+
